@@ -1,3 +1,7 @@
+echo "#########################################"
+echo "# Welcome in the Ubuntu 16.04 installer #"
+echo "#########################################"
+
 rm ~/examples.desktop
 
 sudo apt-get update
@@ -21,10 +25,10 @@ bash Anaconda3-5.1.0-Linux-x86_64.sh
 source ~/.bashrc
 conda list
 conda update -n base conda
-rm Anaconda3-5.1.0-Linux-x86_64.sh
 conda create --name lpr34 python=3.4 --yes
 conda create --name ironcarenv python=3.6 --yes
 conda create --name thalesenv python=3.6 --yes
+rm Anaconda3-5.1.0-Linux-x86_64.sh
 
 echo "Installation of spotify"
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 0DF731E45CE24F27EEEB1450EFDC8610341D9410
@@ -33,8 +37,9 @@ sudo apt-get update -y
 sudo apt-get install spotify-client -y
 
 echo "Installation of atom"
-wget https://atom.io/download/deb
-sudo dpkg -i atom-amd64.deb
+wget https://atom.io/download/deb -O atom-deb
+sudo dpkg -i atom-deb
+rm atom-deb
 
 echo "Installation of nteract"
 sudo apt-get install libappindicator1 libindicator7 libaudit-common libaudit1 -y
