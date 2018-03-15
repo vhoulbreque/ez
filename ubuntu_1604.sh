@@ -47,11 +47,16 @@ wget https://github.com/nteract/nteract/releases/download/v0.7.1/nteract_0.7.1_a
 sudo dpkg -i nteract_0.7.1_amd64.deb
 rm nteract_0.7.1_amd64.deb
 
-echo "Installation of franz"
+#echo "Installation of franz"
+#cd ~
+#wget https://github.com/meetfranz/franz/releases/download/v5.0.0-beta.16/franz-5.0.0-beta.16-x86_64.AppImage
+#chmod a+x franz-5.0.0-beta.16-x86_64.AppImage
+#./franz-5.0.0-beta.16-x86_64.AppImage
+
+echo "Installation of skype"
 cd ~
-wget https://github.com/meetfranz/franz/releases/download/v5.0.0-beta.16/franz-5.0.0-beta.16-x86_64.AppImage
-chmod a+x franz-5.0.0-beta.16-x86_64.AppImage
-./franz-5.0.0-beta.16-x86_64.AppImage
+wget https://go.skype.com/skypeforlinux-64.deb
+sudo dpkg -i skypeforlinux-64.deb
 
 echo "Installation of some tools"
 sudo apt install ffmpeg
