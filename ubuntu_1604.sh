@@ -40,6 +40,10 @@ chmod +x ubuntu_1604/nteract.sh
 chmod +x ubuntu_1604/skype.sh
 ./ubuntu_1604/skype.sh
 
+# fastText
+chmod +x ubuntu_1604/fasttext.sh
+./ubuntu_1604/fasttext.sh
+
 echo "clean-up"
 sudo apt-get autoremove -y
 
