@@ -1,11 +1,4 @@
 # my-installations
 
-This repository contains my installations of common tools needed for my desktop.  
-Currently, there is only Ubuntu 16.04  
-More to come  
-
-Don't forget to do:
-
-```bash
-$ chmod +x ubuntu_1604.sh
-```
+This repository contains command-line installations of common tools.
+Currently, there is only Ubuntu 16.04

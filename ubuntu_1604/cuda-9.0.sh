@@ -24,6 +24,9 @@ wget https://developer.nvidia.com/compute/cuda/9.0/Prod/patches/2/cuda-repo-ubun
 sudo dpkg -i cuda-repo-ubuntu1604-9-0-local-cublas-performance-update-2_1.0-1_amd64.deb
 rm cuda-repo-ubuntu1604-9-0-local-cublas-performance-update-2_1.0-1_amd64.deb
 
+# Very important ! Without it, the import of Tensorflow will fail for example
+sudo apt install nvidia-cuda-toolkit -y
+
 # Install cudnn (375.5 MB)
 wget https://s3.amazonaws.com/open-source-william-falcon/cudnn-9.0-linux-x64-v7.1.tgz
 sudo tar -xzvf cudnn-9.0-linux-x64-v7.1.tgz
