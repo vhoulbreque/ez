@@ -20,6 +20,10 @@ chmod +x ubuntu_1604/git.sh
 chmod +x ubuntu_1604/mysql-server.sh
 ./ubuntu_1604/mysql-server.sh
 
+# MongoDB
+chmod +x ubuntu_1604/mongo.sh
+./ubuntu_1604/mongo.sh
+
 # Anaconda
 chmod +x ubuntu_1604/anaconda.sh
 ./ubuntu_1604/anaconda.sh
@@ -45,6 +49,8 @@ chmod +x ubuntu_1604/fasttext.sh
 ./ubuntu_1604/fasttext.sh
 
 echo "clean-up"
+sudo apt-get update
+sudo apt-get upgrade -y
 sudo apt-get autoremove -y
 
 echo "The installation is over !"
