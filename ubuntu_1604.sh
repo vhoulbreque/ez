@@ -21,8 +21,8 @@ chmod +x ubuntu_1604/mysql-server.sh
 ./ubuntu_1604/mysql-server.sh
 
 # MongoDB
-chmod +x ubuntu_1604/mongo.sh
-./ubuntu_1604/mongo.sh
+chmod +x ubuntu_1604/mongodb.sh
+./ubuntu_1604/mongodb.sh
 
 # Anaconda
 chmod +x ubuntu_1604/anaconda.sh
