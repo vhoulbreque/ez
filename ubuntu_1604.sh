@@ -6,41 +6,43 @@ echo "#########################################"
 rm ~/examples.desktop
 
 sudo apt-get update
-sudo apt-get upgrade
+sudo apt-get dist-upgrade -y
+
+DIR_SCRIPTS="./ubuntu_1604"
 
 # Common tools
-./ubuntu_1604/common-tools.sh
+$DIR_SCRIPTS/common-tools.sh
 
 # Git
-./ubuntu_1604/git.sh
+$DIR_SCRIPTS/git.sh
 
 # Mysql-server
-./ubuntu_1604/mysql-server.sh
+$DIR_SCRIPTS/mysql-server.sh
 
 # MongoDB
-./ubuntu_1604/mongodb.sh
+$DIR_SCRIPTS/mongodb.sh
 
 # Anaconda
-./ubuntu_1604/anaconda.sh
+$DIR_SCRIPTS/anaconda.sh
 
 # Spotify
-./ubuntu_1604/spotify.sh
+$DIR_SCRIPTS/spotify.sh
 
 # Atom
-./ubuntu_1604/atom.sh
+$DIR_SCRIPTS/atom.sh
 
 # Nteract
-./ubuntu_1604/nteract.sh
+$DIR_SCRIPTS/nteract.sh
 
 # Skype
-./ubuntu_1604/skype.sh
+$DIR_SCRIPTS/skype.sh
 
 # fastText
-./ubuntu_1604/fasttext.sh
+$DIR_SCRIPTS/fasttext.sh
 
 echo "clean-up"
 sudo apt-get update
-sudo apt-get upgrade -y
+sudo apt-get dist-upgrade -y
 sudo apt-get autoremove -y
 
 echo "The installation is over !"
