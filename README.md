@@ -8,6 +8,8 @@ The `config.json` file should look like this:
 ```json
 {
   "git_email": "the_email_of_my_account@example.com",
-  "git_name": "my_git_pseudo"
+  "git_name": "my_git_pseudo",
+  "atom_packages": ["autocomplete-python", "file-icons", "python-autopep8"]
+
 }
 ```
