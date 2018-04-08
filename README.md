@@ -13,3 +13,9 @@ The `config.json` file should look like this:
 
 }
 ```
+
+## TODO:
+
+ - [ ] Install for other platforms
+ - [ ] Add scripts for clean uninstall
+ - [ ] More software/libraries
