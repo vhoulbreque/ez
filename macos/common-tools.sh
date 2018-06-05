@@ -6,3 +6,6 @@ brew doctor
 
 # Installation of git
 brew install git
+
+# Installation of wget
+brew install wget
