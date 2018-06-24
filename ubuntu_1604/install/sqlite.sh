@@ -1,4 +1,4 @@
-echo "Installatio of sqlite"
+echo "Installation of sqlite"
 
 cd ~
 

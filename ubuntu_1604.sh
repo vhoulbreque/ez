@@ -8,7 +8,7 @@ rm ~/examples.desktop
 sudo apt-get update
 sudo apt-get dist-upgrade -y
 
-DIR_SCRIPTS="./ubuntu_1604"
+DIR_SCRIPTS="./ubuntu_1604/install"
 
 # Common tools
 $DIR_SCRIPTS/common-tools.sh
