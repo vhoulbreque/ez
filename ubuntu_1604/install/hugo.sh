@@ -1,3 +1,4 @@
 echo "Install hugo"
 
-sudo apt-get install hugo
+snap install hugo --channel=extended
+source ~/.bashrc
