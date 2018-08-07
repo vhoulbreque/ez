@@ -1,5 +1,5 @@
 echo "#########################################"
-echo "# Welcome in the Ubuntu 16.04 installer #"
+echo "# Welcome to the Ubuntu 16.04 installer #"
 echo "#########################################"
 
 # When installing ubuntu, this file is present
