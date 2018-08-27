@@ -9,3 +9,5 @@ echo "deb [arch=amd64] https://s3-us-west-2.amazonaws.com/brave-apt `lsb_release
 sudo apt update
 sudo apt-get install apt-transport-https -y
 sudo apt install brave -y
+
+echo "Installation of Brave complete"

@@ -1,4 +1,4 @@
-echo "Installation of golang"
+echo "Installation of Golang"
 
 cd ~
 sudo echo
@@ -13,3 +13,5 @@ echo "
 export PATH=\"/usr/local/go/bin:\$PATH\"" >> .bashrc
 
 source ~/.bashrc
+
+echo "Installation of Golang complete"

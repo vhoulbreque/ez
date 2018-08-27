@@ -8,3 +8,5 @@ wget -O tor.tar.xz https://www.torproject.org/dist/torbrowser/7.5.3/tor-browser-
 tar -xvf tor.tar.xz
 rm tor.tar.xz
 mv tor-browser_en-US/ /opt/
+
+echo "Installation of TOR complete"

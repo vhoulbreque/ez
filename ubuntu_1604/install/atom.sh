@@ -1,4 +1,4 @@
-echo "Installation of atom"
+echo "Installation of Atom"
 
 CURRENT=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
@@ -22,3 +22,5 @@ for pkg in $atom_packages
 do
   apm install $pkg
 done
+
+echo "Installation of Atom complete"

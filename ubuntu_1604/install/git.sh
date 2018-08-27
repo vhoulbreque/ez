@@ -25,3 +25,5 @@ then
 else
   echo "No git_name was given in config.json"
 fi
+
+echo "Installation of git complete"

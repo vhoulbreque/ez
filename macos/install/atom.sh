@@ -1,4 +1,4 @@
-echo "Installation of atom"
+echo "Installation of Atom"
 
 APPLICATIONS_PATH="/Applications"
 
@@ -8,3 +8,5 @@ wget -O atom-mac.zip https://atom.io/download/mac
 unzip atom-mac.zip
 rm atom-mac.zip
 mv Atom.app $APPLICATIONS_PATH/
+
+echo "Installation of Atom complete"

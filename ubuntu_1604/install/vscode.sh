@@ -1,4 +1,4 @@
-echo "Installation of vscode"
+echo "Installation of VSCode"
 sudo echo ""  # To ask for the password at the beginning of the script
 
 cd ~
@@ -8,3 +8,5 @@ sudo dpkg -i vscode.deb
 sudo apt-get install -f
 
 rm vscode.deb
+
+echo "Installation of VSCode complete"

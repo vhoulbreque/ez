@@ -9,3 +9,5 @@ brew install git
 
 # Installation of wget
 brew install wget
+
+echo "Installation of common tools complete"

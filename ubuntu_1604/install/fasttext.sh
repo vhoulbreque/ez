@@ -1,4 +1,4 @@
-echo "Installation of fasttext"
+echo "Installation of fastText"
 
 cd ~
 
@@ -16,3 +16,5 @@ echo "
 export PATH=\"/opt/fastText-0.1.0:\$PATH\"" >> .bashrc
 
 source ~/.bashrc
+
+echo "Installation of fastText complete"

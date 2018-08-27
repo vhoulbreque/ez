@@ -1,4 +1,4 @@
-echo "Installation of spotify"
+echo "Installation of Spotify"
 
 cd ~
 
@@ -6,3 +6,5 @@ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 0DF731E45
 echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
 sudo apt-get update -y
 sudo apt-get install spotify-client -y
+
+echo "Installation of Spotify complete"

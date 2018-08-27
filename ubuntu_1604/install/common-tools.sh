@@ -11,3 +11,5 @@ sudo apt-get install --reinstall build-essential
 
 # Installation of jq for json parsing
 sudo apt-get install jq -y  # https://github.com/stedolan/jq
+
+echo "Installation of common tools complete"

@@ -4,4 +4,4 @@ cd ~
 
 brew install sbt
 
-echo "Finished installing sbt"
+echo "Installation of sbt complete"
