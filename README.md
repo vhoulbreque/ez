@@ -1,7 +1,6 @@
 # my-installations
 
-This repository contains command-line installations of common tools.
-Currently, there is only Ubuntu 16.04
+This repository contains command-line installations of common and uncommon tools.
 
 The `config.json` file should look like this:
 
