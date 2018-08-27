@@ -1,0 +1,29 @@
+platform=$1  # linux-gnu, darwin*
+mode=$2  # install, uninstall
+
+if [[ $mode == "install" ]]; then
+  echo "Installation of Anaconda"
+
+  if [[ $platform == "linux-gnu" ]]; then
+    cd ~
+    wget https://repo.continuum.io/archive/Anaconda3-5.1.0-Linux-x86_64.sh
+    bash Anaconda3-5.1.0-Linux-x86_64.sh
+    source ~/.bashrc
+    conda list
+    conda update -n base conda
+
+    rm Anaconda3-5.1.0-Linux-x86_64.sh
+
+  elif [[ $platform == "darwin"* ]]; then
+    echo "Not currently implemented"
+    exit 1
+  fi
+
+  echo "Installation of Anaconda complete"
+
+elif [[ $mode == "uninstall" ]]; then
+  echo "Uninstallation of Anaconda"
+  echo "Not implemented"
+  exit 1
+  echo "Uninstallation of Anaconda complete"
+fi

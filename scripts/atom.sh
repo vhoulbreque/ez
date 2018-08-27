@@ -43,5 +43,7 @@ if [[ $mode == "install" ]]; then
 
 elif [[ $mode == "uninstall" ]]; then
   echo "Uninstallation of Atom"
-  echo "Not currently implemented"
+  echo "Not implemented"
+  exit 1
+  echo "Uninstallation of Atom complete"
 fi
