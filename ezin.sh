@@ -62,17 +62,6 @@ if [[ $mode == "help" ]]; then
   exit 1
 fi
 
-if [[ $platform == "linux-gnu" ]]; then
-  DIR_SCRIPTS="./ubuntu_1604/install"
-elif [[ $platform == "darwin"* ]]; then
-  DIR_SCRIPTS="./macos/install"
-fi
+./scripts/$package_name.sh $platform $mode
 
-if [[ $mode == "install" ]]; then
-  echo "Install $package_name"
-  if [[ $package_name == "ezin" ]]; then
-    $DIR_SCRIPTS/common-tools.sh
-  fi
-elif [[ $mode == "uninstall" ]]; then
-  echo "Uninstall $package_name"
-fi
+echo "Finished"
