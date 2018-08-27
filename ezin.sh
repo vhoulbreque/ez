@@ -9,8 +9,6 @@ File an issue on https://github.com/vinzeebreak/my-installations to support your
   exit 1
 fi
 
-echo $platform
-
 # Retrieve the different arguments
 # See https://medium.com/@Drew_Stokes/bash-argument-parsing-54f3b81a6a8f
 # for more info
@@ -38,7 +36,6 @@ while (( "$#" )); do
       exit 1
       ;;
     *) # preserve positional arguments
-      echo "A : $1"
       if [[ "$1" == "uninstall" ]]; then
         mode="uninstall"
         FARG=$2
@@ -54,8 +51,6 @@ while (( "$#" )); do
   esac
 done
 
-echo $mode
-echo $package_name
 
 if [[ $mode == "help" ]]; then
   echo "This is the help"
@@ -63,5 +58,3 @@ if [[ $mode == "help" ]]; then
 fi
 
 ./scripts/$package_name.sh $platform $mode
-
-echo "Finished"
