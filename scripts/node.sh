@@ -12,8 +12,7 @@ if [[ $mode == "install" ]]; then
     sudo apt-get install nodejs -y
 
   elif [[ $platform == "darwin"* ]]; then
-    echo "Not implemented"
-    exit 1
+    brew install node
   fi
 
   echo "Installation of NodeJS complete"
@@ -31,8 +30,7 @@ elif [[ $mode == "uninstall" ]]; then
     rm -rf .npm/
 
   elif [[ $platform == "darwin"* ]]; then
-    echo "Not implemented"
-    exit 1
+    brew uninstall node
   fi
 
   echo "Uninstallation of NodeJS complete"
