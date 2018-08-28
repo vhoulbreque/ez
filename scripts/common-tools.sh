@@ -19,7 +19,6 @@ if [[ $mode == "install" ]]; then
     # Installation of jq for json parsing
     sudo apt-get install jq -y  # https://github.com/stedolan/jq
 
-
   elif [[ $platform == "darwin"* ]]; then
     # Installation of brew
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -27,6 +26,7 @@ if [[ $mode == "install" ]]; then
 
     brew install git
     brew install wget
+    brew install jq
   fi
 
   echo "Installation of common tools complete"
