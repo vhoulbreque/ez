@@ -51,10 +51,14 @@ while (( "$#" )); do
   esac
 done
 
-
 if [[ $mode == "help" ]]; then
   echo "This is the help"
   exit 1
 fi
 
-./scripts/$package_name.sh $platform $mode
+SCRIPT="./scripts/$package_name.sh"
+if [ ! -f $SCRIPT ]; then
+  echo "The package $package_name does not exist"
+else
+  ./scripts/$package_name.sh $platform $mode
+fi
