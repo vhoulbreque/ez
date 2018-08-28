@@ -1,5 +1,6 @@
 #!/bin/bash
 
+VERSION="0.0.0"
 platform="$OSTYPE"
 
 if [[ $platform != "linux-gnu" ]] && [[ $platform != "darwin"* ]]; then
@@ -27,6 +28,10 @@ while (( "$#" )); do
       mode="help"
       shift
       ;;
+    -V|--version)
+      mode="version"
+      shift
+      ;;
     --) # end argument parsing
       shift
       break
@@ -51,8 +56,29 @@ while (( "$#" )); do
   esac
 done
 
+usage() {
+    cat 1>&2 <<EOF
+ez - $VERSION
+The ez installer
+
+USAGE:
+    ez [FLAGS]
+
+FLAGS:
+    -h, --help              Prints help information
+    -V, --version           Prints version information
+EOF
+}
+
+version() {
+  echo "ez - $VERSION"
+}
+
 if [[ $mode == "help" ]]; then
-  echo "This is the help"
+  usage
+  exit 1
+elif [[ $mode == "version" ]]; then
+  version
   exit 1
 fi
 
