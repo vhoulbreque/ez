@@ -15,13 +15,13 @@ fi
 # for more info
 mode=""
 package_name=""
+requirements=false
 
 while (( "$#" )); do
   case "$1" in
     -i|--install)
-      FARG=$2
       mode="install"
-      package_name=$FARG
+      package_name=$2
       shift 2
       ;;
     -h|--help)
@@ -41,15 +41,18 @@ while (( "$#" )); do
       exit 1
       ;;
     *) # preserve positional arguments
-      if [[ "$1" == "uninstall" ]]; then
+      if [[ "$1" = "uninstall" ]]; then
         mode="uninstall"
-        FARG=$2
-        package_name=$FARG
-        shift 2
-      elif [[ "$1" == "install" ]]; then
+      elif [[ "$1" = "install" ]]; then
         mode="install"
-        FARG=$2
-        package_name=$FARG
+      fi
+
+      if [[ $2 = "-r" ]]; then
+        requirements=true
+        requirements_file=$3
+        shift 3
+      else
+        package_name=$2
         shift 2
       fi
       ;;
@@ -74,17 +77,34 @@ version() {
   echo "ez - $VERSION"
 }
 
-if [[ $mode == "help" ]]; then
+if [[ $mode = "help" ]]; then
   usage
-  exit 1
-elif [[ $mode == "version" ]]; then
+elif [[ $mode = "version" ]]; then
   version
-  exit 1
-fi
+elif [ $mode = "install" ] || [$mode = "uninstall" ]; then
 
-SCRIPT="./scripts/$package_name.sh"
-if [ ! -f $SCRIPT ]; then
-  echo "The package $package_name does not exist"
-else
-  ./scripts/$package_name.sh $platform $mode
+  if [[ $requirements = true ]]; then
+    # Installing from a "requirements" file
+    # packages should be separated by a newline "\n"
+    if [ ! -f $requirements_file ]; then
+      echo "The requirements_file $requirements_file does not exist"
+      exit 1
+    fi
+    IFS=$'\r\n' GLOBIGNORE='*' command eval 'packages=($(cat $requirements_file))'
+
+  else
+    packages=($package_name)
+  fi
+
+  # Install or uninstall all the packages one ny one
+  for package_name in "${packages[@]}"
+  do
+    SCRIPT="./scripts/$package_name.sh"
+    if [ ! -f $SCRIPT ]; then
+      echo "The package $package_name does not exist"
+    else
+      ./scripts/$package_name.sh $platform $mode
+    fi
+  done
+
 fi
