@@ -81,7 +81,7 @@ if [[ $mode = "help" ]]; then
   usage
 elif [[ $mode = "version" ]]; then
   version
-elif [ $mode = "install" ] || [$mode = "uninstall" ]; then
+elif [[ $mode = "install" ]] || [[ $mode = "uninstall" ]]; then
 
   if [[ $requirements = true ]]; then
     # Installing from a "requirements" file
