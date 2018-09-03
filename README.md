@@ -1,4 +1,4 @@
-# my-installations
+# ez
 
 This repository contains command-line installations of common and uncommon tools.
 
@@ -12,9 +12,3 @@ The `config.json` file should look like this:
 
 }
 ```
-
-## TODO:
-
- - [ ] Install for other platforms
- - [ ] Add scripts for clean uninstall
- - [ ] More software/libraries
