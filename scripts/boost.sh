@@ -8,11 +8,8 @@ if [[ $mode == "install" ]]; then
   echo "Installation of $PACKAGE"
   echo "$PACKAGE_URL"
 
-  if [[ $platform == "linux-gnu" ]]; then
-    echo "Not currently implemented"
-    exit 1
-  elif [[ $platform == "darwin"* ]]; then
-    sudo echo ""
+  if [[ $platform = "linux-gnu" ]] || [[ $platform = "darwin"* ]]; then
+    sudo echo
 
     cd ~/Downloads
     wget https://dl.bintray.com/boostorg/release/1.63.0/source/boost_1_63_0.zip
@@ -20,6 +17,9 @@ if [[ $mode == "install" ]]; then
     sudo mv boost_1_63_0 /usr/local/bin
 
     rm boost_1_63_0.zip
+  else
+    echo "Not currently implemented"
+    exit 1
   fi
 
   echo "Installation of $PACKAGE complete"
