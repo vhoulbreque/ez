@@ -1,8 +1,8 @@
 platform=$1  # linux-gnu, darwin*
 mode=$2  # install, uninstall
 
-PACKAGE="Boost"
-PACKAGE_URL="https://www.boost.org/"
+PACKAGE="Signal"
+PACKAGE_URL="https://signal.org/"
 
 if [[ $mode == "install" ]]; then
   echo "Installation of $PACKAGE"
