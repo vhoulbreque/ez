@@ -9,11 +9,11 @@ if [[ $mode == "install" ]]; then
   echo "$PACKAGE_URL"
 
   if [[ $platform == "linux-gnu" ]]; then
-    sudo echo ""
+    sudo echo
 
     curl -s https://updates.signal.org/desktop/apt/keys.asc | sudo apt-key add -
     echo "deb [arch=amd64] https://updates.signal.org/desktop/apt xenial main" | sudo tee -a /etc/apt/sources.list.d/signal-xenial.list
-    sudo apt update && sudo apt install signal-desktop
+    sudo apt update && sudo apt install signal-desktop -y
   elif [[ $platform == "darwin"* ]]; then
     sudo echo ""
 
