@@ -1,8 +1,12 @@
 platform=$1  # linux-gnu, darwin*
 mode=$2  # install, uninstall
 
+PACKAGE="fastText"
+PACKAGE_URL="https://fasttext.cc/"
+
 if [[ $mode == "install" ]]; then
-  echo "Installation of fastText"
+  echo "Installation of $PACKAGE"
+  echo "$PACKAGE_URL"
 
   if [[ $platform == "linux-gnu" ]]; then
     cd ~
@@ -27,11 +31,11 @@ if [[ $mode == "install" ]]; then
     exit 1
   fi
 
-  echo "Installation of fastText complete"
+  echo "Installation of $PACKAGE complete"
 
 elif [[ $mode == "uninstall" ]]; then
-  echo "Uninstallation of fastText"
+  echo "Uninstallation of $PACKAGE"
   echo "Not implemented"
   exit 1
-  echo "Uninstallation of fastText complete"
+  echo "Uninstallation of $PACKAGE complete"
 fi

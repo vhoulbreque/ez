@@ -1,8 +1,12 @@
 platform=$1  # linux-gnu, darwin*
 mode=$2  # install, uninstall
 
+PACKAGE="Atom"
+PACKAGE_URL="https://atom.io/"
+
 if [[ $mode == "install" ]]; then
-  echo "Installation of Atom"
+  echo "Installation of $PACKAGE"
+  echo "$PACKAGE_URL"
 
   if [[ $platform == "linux-gnu" ]]; then
     CURRENT=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
@@ -39,11 +43,11 @@ if [[ $mode == "install" ]]; then
     mv Atom.app $APPLICATIONS_PATH/
   fi
 
-  echo "Installation of Atom complete"
+  echo "Installation of $PACKAGE complete"
 
 elif [[ $mode == "uninstall" ]]; then
-  echo "Uninstallation of Atom"
+  echo "Uninstallation of $PACKAGE"
   echo "Not implemented"
   exit 1
-  echo "Uninstallation of Atom complete"
+  echo "Uninstallation of $PACKAGE complete"
 fi

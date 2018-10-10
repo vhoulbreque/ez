@@ -1,8 +1,12 @@
 platform=$1  # linux-gnu, darwin*
 mode=$2  # install, uninstall
 
+PACKAGE="Apache Spark"
+PACKAGE_URL="https://spark.apache.org/"
+
 if [[ $mode == "install" ]]; then
-  echo "Installation of Apache Spark"
+  echo "Installation of $PACKAGE"
+  echo "$PACKAGE_DESCRIPTION"
 
   if [[ $platform == "linux-gnu" ]]; then
     echo "Not currently implemented"
@@ -15,11 +19,11 @@ if [[ $mode == "install" ]]; then
     brew install apache-spark
   fi
 
-  echo "Installation of Apache Spark complete"
+  echo "Installation of $PACKAGE complete"
 
 elif [[ $mode == "uninstall" ]]; then
-  echo "Uninstallation of Apache Spark"
+  echo "Uninstallation of $PACKAGE"
   echo "Not implemented"
   exit 1
-  echo "Uninstallation of Apache Spark complete"
+  echo "Uninstallation of $PACKAGE complete"
 fi
