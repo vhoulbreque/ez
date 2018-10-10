@@ -1,8 +1,12 @@
 platform=$1  # linux-gnu, darwin*
 mode=$2  # install, uninstall
 
+PACKAGE="nteract"
+PACKAGE_URL="https://nteract.io/"
+
 if [[ $mode == "install" ]]; then
-  echo "Installation of nteract"
+  echo "Installation of $PACKAGE"
+  echo "$PACKAGE_URL"
 
   if [[ $platform == "linux-gnu" ]]; then
     cd ~
@@ -13,15 +17,19 @@ if [[ $mode == "install" ]]; then
     rm nteract_latest.deb
 
   elif [[ $platform == "darwin"* ]]; then
+    brew cask install nteract
+  fi
+
+  echo "Installation of $PACKAGE complete"
+
+elif [[ $mode == "uninstall" ]]; then
+
+  if [[ $platform == "darwin"* ]]; then
+    brew cask uninstall nteract
+  else
     echo "Not implemented"
     exit 1
   fi
 
-  echo "Installation of nteract complete"
-
-elif [[ $mode == "uninstall" ]]; then
-  echo "Uninstallation of nteract"
-  echo "Not implemented"
-  exit 1
-  echo "Uninstallation of nteract complete"
+  echo "Uninstallation of $PACKAGE complete"
 fi
