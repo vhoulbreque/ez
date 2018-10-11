@@ -1,8 +1,12 @@
 platform=$1  # linux-gnu, darwin*
 mode=$2  # install, uninstall
 
+PACKAGE="NodeJS"
+PACKAGE_URL="https://nodejs.org/"
+
 if [[ $mode == "install" ]]; then
-  echo "Installation of NodeJS"
+  echo "Installation of $PACKAGE"
+  echo "$PACKAGE_URL"
 
   if [[ $platform == "linux-gnu" ]]; then
     cd ~
@@ -15,10 +19,10 @@ if [[ $mode == "install" ]]; then
     brew install node
   fi
 
-  echo "Installation of NodeJS complete"
+  echo "Installation of $PACKAGE complete"
 
 elif [[ $mode == "uninstall" ]]; then
-  echo "Uninstallation of NodeJS"
+  echo "Uninstallation of $PACKAGE"
 
   if [[ $platform == "linux-gnu" ]]; then
     cd ~
@@ -33,6 +37,6 @@ elif [[ $mode == "uninstall" ]]; then
     brew uninstall node
   fi
 
-  echo "Uninstallation of NodeJS complete"
+  echo "Uninstallation of $PACKAGE complete"
 
 fi

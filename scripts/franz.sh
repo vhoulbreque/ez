@@ -1,8 +1,12 @@
 platform=$1  # linux-gnu, darwin*
 mode=$2  # install, uninstall
 
+PACKAGE="Franz"
+PACKAGE_URL="https://meetfranz.com/"
+
 if [[ $mode == "install" ]]; then
-  echo "Installation of Franz"
+  echo "Installation of $PACKAGE"
+  echo "$PACKAGE_URL"
 
   if [[ $platform == "linux-gnu" ]]; then
     cd ~
@@ -16,11 +20,11 @@ if [[ $mode == "install" ]]; then
     exit 1
   fi
 
-  echo "Installation of Franz complete"
+  echo "Installation of $PACKAGE complete"
 
 elif [[ $mode == "uninstall" ]]; then
-  echo "Uninstallation of Franz"
+  echo "Uninstallation of $PACKAGE"
   echo "Not implemented"
   exit 1
-  echo "Uninstallation of Franz complete"
+  echo "Uninstallation of $PACKAGE complete"
 fi

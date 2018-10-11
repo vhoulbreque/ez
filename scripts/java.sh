@@ -1,8 +1,12 @@
 platform=$1  # linux-gnu, darwin*
 mode=$2  # install, uninstall
 
+PACKAGE="Java"
+PACKAGE_URL="https://www.java.com/"
+
 if [[ $mode == "install" ]]; then
-  echo "Installation of Java"
+  echo "Installation of $PACKAGE"
+  echo "$PACKAGE_URL"
 
   if [[ $platform == "linux-gnu" ]]; then
     sudo echo
@@ -20,11 +24,11 @@ if [[ $mode == "install" ]]; then
     exit 1
   fi
 
-  echo "Installation of Java complete"
+  echo "Installation of $PACKAGE complete"
 
 elif [[ $mode == "uninstall" ]]; then
-  echo "Uninstallation of Java"
+  echo "Uninstallation of $PACKAGE"
   echo "Not implemented"
   exit 1
-  echo "Uninstallation of Java complete"
+  echo "Uninstallation of $PACKAGE complete"
 fi

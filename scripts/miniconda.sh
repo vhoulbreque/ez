@@ -1,8 +1,12 @@
 platform=$1  # linux-gnu, darwin*
 mode=$2  # install, uninstall
 
+PACKAGE="Miniconda"
+PACKAGE_URL="https://conda.io/miniconda.html"
+
 if [[ $mode == "install" ]]; then
-  echo "Installation of Miniconda"
+  echo "Installation of $PACKAGE"
+  echo "$PACKAGE_URL"
 
   if [[ $platform == "linux-gnu" ]]; then
     cd ~
@@ -16,11 +20,11 @@ if [[ $mode == "install" ]]; then
     exit 1
   fi
 
-  echo "Installation of Miniconda complete"
+  echo "Installation of $PACKAGE complete"
 
 elif [[ $mode == "uninstall" ]]; then
-  echo "Uninstallation of Miniconda"
+  echo "Uninstallation of $PACKAGE"
   echo "Not implemented"
   exit 1
-  echo "Uninstallation of Miniconda complete"
+  echo "Uninstallation of $PACKAGE complete"
 fi

@@ -1,8 +1,12 @@
 platform=$1  # linux-gnu, darwin*
 mode=$2  # install, uninstall
 
+PACKAGE="TOR"
+PACKAGE_URL="https://www.torproject.org/"
+
 if [[ $mode == "install" ]]; then
-  echo "Installation of TOR"
+  echo "Installation of $PACKAGE"
+  echo "$PACKAGE_URL"
 
   if [[ $platform == "linux-gnu" ]]; then
     cd ~
@@ -19,11 +23,11 @@ if [[ $mode == "install" ]]; then
     exit 1
   fi
 
-  echo "Installation of TOR complete"
+  echo "Installation of $PACKAGE complete"
 
 elif [[ $mode == "uninstall" ]]; then
-  echo "Uninstallation of TOR"
+  echo "Uninstallation of $PACKAGE"
   echo "Not implemented"
   exit 1
-  echo "Uninstallation of TOR complete"
+  echo "Uninstallation of $PACKAGE complete"
 fi

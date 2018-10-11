@@ -1,8 +1,12 @@
 platform=$1  # linux-gnu, darwin*
 mode=$2  # install, uninstall
 
+PACKAGE="Telegram"
+PACKAGE_URL="https://telegram.org/"
+
 if [[ $mode == "install" ]]; then
-  echo "Installation of Telegram"
+  echo "Installation of $PACKAGE"
+  echo "$PACKAGE_URL"
 
   if [[ $platform == "linux-gnu" ]]; then
     cd ~
@@ -17,11 +21,11 @@ if [[ $mode == "install" ]]; then
     exit 1
   fi
 
-  echo "Installation of Telegram complete"
+  echo "Installation of $PACKAGE complete"
 
 elif [[ $mode == "uninstall" ]]; then
-  echo "Uninstallation of Telegram"
+  echo "Uninstallation of $PACKAGE"
   echo "Not implemented"
   exit 1
-  echo "Uninstallation of Telegram complete"
+  echo "Uninstallation of $PACKAGE complete"
 fi

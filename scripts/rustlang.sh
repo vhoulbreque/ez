@@ -1,8 +1,12 @@
 platform=$1  # linux-gnu, darwin*
 mode=$2  # install, uninstall
 
+PACKAGE="Rustlang"
+PACKAGE_URL="https://www.rust-lang.org/"
+
 if [[ $mode == "install" ]]; then
-  echo "Installation of Rustlang"
+  echo "Installation of $PACKAGE"
+  echo "$PACKAGE_URL"
 
   if [[ $platform == "linux-gnu" || $platform == "darwin"* ]]; then
     curl https://sh.rustup.rs -sSf | sh
@@ -13,12 +17,12 @@ if [[ $mode == "install" ]]; then
     source ~/.profile
   fi
 
-  echo "Installation of Rustlang complete"
+  echo "Installation of $PACKAGE complete"
 
 elif [[ $mode == "uninstall" ]]; then
-  echo "Uninstallation of Rustlang"
+  echo "Uninstallation of $PACKAGE"
 
   rustup self uninstall
 
-  echo "Uninstallation of Rustlang complete"
+  echo "Uninstallation of $PACKAGE complete"
 fi

@@ -1,8 +1,12 @@
 platform=$1  # linux-gnu, darwin*
 mode=$2  # install, uninstall
 
+PACKAGE="Jekyll"
+PACKAGE_URL="https://jekyllrb.com/"
+
 if [[ $mode == "install" ]]; then
-  echo "Installation of Jekyll"
+  echo "Installation of $PACKAGE"
+  echo "$PACKAGE_URL"
 
   if [[ $platform == "linux-gnu" ]]; then
     sudo apt-get install ruby ruby-dev build-essential
@@ -19,11 +23,11 @@ if [[ $mode == "install" ]]; then
     exit 1
   fi
 
-  echo "Installation of Jekyll complete"
+  echo "Installation of $PACKAGE complete"
 
 elif [[ $mode == "uninstall" ]]; then
-  echo "Uninstallation of Jekyll"
+  echo "Uninstallation of $PACKAGE"
   echo "Not implemented"
   exit 1
-  echo "Uninstallation of Jekyll complete"
+  echo "Uninstallation of $PACKAGE complete"
 fi

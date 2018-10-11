@@ -1,8 +1,16 @@
 platform=$1  # linux-gnu, darwin*
 mode=$2  # install, uninstall
 
+PACKAGE="git"
+PACKAGE_DESCRIPTION="Git is a free and open source distributed version control
+system designed to handle everything from small to very large projects with
+speed and efficiency. "
+PACKAGE_URL="https://git-scm.com/"
+
 if [[ $mode == "install" ]]; then
   echo "Installation of git"
+  echo "$PACKAGE_DESCRIPTION"
+  echo "$PACKAGE_URL"
 
   if [[ $platform == "linux-gnu" ]]; then
     sudo add-apt-repository ppa:git-core/ppa -y
@@ -11,7 +19,7 @@ if [[ $mode == "install" ]]; then
 
   elif [[ $platform == "darwin"* ]]; then
     brew install git
-    
+
   else
     echo "Not implemented"
     exit 1
