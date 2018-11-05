@@ -14,21 +14,28 @@ if [[ $mode == "install" ]]; then
     cd ~
 
     wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
-    sudo apt-get install apt-transport-https
+    sudo apt-get install apt-transport-https -y
     echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
     sudo apt-get update
-    sudo apt-get install sublime-text
+    sudo apt-get install sublime-text -y
 
   elif [[ $platform == "darwin"* ]]; then
     echo "Not implemented"
-    exit 1  
+    exit 1
   fi
 
   echo "Installation of $PACKAGE complete"
 
 elif [[ $mode == "uninstall" ]]; then
   echo "Uninstallation of $PACKAGE"
-  echo "Not implemented"
-  exit 1
+
+  if [[ $platform == "linux-gnu" ]]; then
+    sudo apt-get remove sublime-text -y && sudo apt-get autoremove -y
+
+  elif [[ $platform == "darwin"* ]]; then
+    echo "Not implemented"
+    exit 1
+  fi
+
   echo "Uninstallation of $PACKAGE complete"
 fi
